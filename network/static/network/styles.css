@@ -399,11 +399,36 @@ header {
   display: flex;
 }
 
-.profile-header > div:last-of-type {
+#profile-header-name-section {
   margin-left: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+#profile-header-follow-section {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+#profile-header-follow-section > button {
+  padding: 0.5rem 1.5rem;
+  color: #fff;
+  border-radius: 28px;
+  background-color: #FC471E;
+  text-align: center;
+  border: 0;
+  font-family: "Tilt Warp", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#profile-header-follow-section > button:hover {
+  background-color: #e5411d;
+  color: #cecece;
+  cursor: pointer;
 }
 
 #profile-username {

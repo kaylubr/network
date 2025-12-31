@@ -7,10 +7,15 @@
       <div>
         <img src="{% static 'network/icons/reddit_profile.png' %}" alt="profile picture" id="profile-pic">
       </div>
-      <div>
-        <p>{{ user.first_name }}</p>
+      <div id="profile-header-name-section">
+        <p>{{ user.first_name.capitalize }}</p>
         <p id="profile-username">u/{{ user.username }}</p>
       </div>
+      {% if request.user != user %}
+        <div id="profile-header-follow-section">
+          <button>Follow</button>
+        </div>
+      {% endif  %}
     </div>
     <div class="profile-body">
       <img src="{% static '/network/icons/calendar.svg' %}" alt="calendar icon" id="calendar-icon">
