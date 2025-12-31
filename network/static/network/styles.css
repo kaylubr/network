@@ -32,7 +32,6 @@ nav {
 
 #logo {
   width: 55px;
-  margin-bottom: 4rem;
 }
 
 nav > div {
@@ -45,6 +44,7 @@ nav > div {
   font-size: 28px;
   height: 100%;
   gap: 3rem;
+  margin-top: 4rem;
 }
 
 #nav-list > li {
@@ -105,10 +105,7 @@ aside > div {
 }
 
 aside h1 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 19px;
+  font-size: 20px;
   margin-bottom: 2rem;
 }
 
@@ -145,5 +142,69 @@ aside a:last-of-type {
 }
 
 aside a:last-of-type:hover {
+  text-decoration: underline;
+}
+
+/* Login */
+
+#login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: calc(100dvh / 2);
+  transform: translateY(-65%);
+}
+
+#login-container > img {
+  width: 80px;
+}
+
+#login-container > form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#login-container input[type="text"],
+#login-container input[type="password"] {
+  color: #fff;
+  background-color: #434343;
+  border: 0;
+  width: 30rem;
+  height: 3rem;
+  padding: 0.5rem 1.5rem;
+}
+
+#login-container input[type="text"]:focus,
+#login-container input[type="password"]:focus {
+  outline: 2px solid #FC471E;
+}
+
+#login-button {
+  width: 100%;
+  padding: 1rem 4rem;
+  border-radius: 26px;
+  background-color: #FC471E;
+  border: 0;
+  color: #fff;
+  font-family: "Tilt Warp", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#login-button:hover {
+  background-color: #e5411d;
+  color: #cecece;
+  cursor: pointer;
+}
+
+#login-container a {
+  text-decoration: none;
+  color: #FC471E;
+}
+
+#login-container a:hover {
   text-decoration: underline;
 }
