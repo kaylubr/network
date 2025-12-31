@@ -27,7 +27,7 @@ nav {
   position: sticky;
   padding: 1rem 3rem;
   background-color: #1C1C1C;
-  width: 322px;
+  width: 20.125rem;
 }
 
 #logo {
@@ -147,41 +147,42 @@ aside a:last-of-type:hover {
 
 /* Login */
 
-#login-container {
+#auth-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
   margin-top: calc(100dvh / 2);
-  transform: translateY(-65%);
+  transform: translateY(-50%);
 }
 
-#login-container > img {
+#auth-container > img {
   width: 80px;
 }
 
-#login-container > form {
+#auth-container > form {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-#login-container input[type="text"],
-#login-container input[type="password"] {
+#auth-container input:not(#auth-button) {
   color: #fff;
   background-color: #434343;
   border: 0;
-  width: 30rem;
   height: 3rem;
   padding: 0.5rem 1.5rem;
 }
 
-#login-container input[type="text"]:focus,
-#login-container input[type="password"]:focus {
+#auth-container input:not(#auth-button, #first-name, #last-name) {
+  width: 30rem;
+}
+
+#auth-container input:focus {
   outline: 2px solid #FC471E;
 }
 
-#login-button {
+#auth-button {
   width: 100%;
   padding: 1rem 4rem;
   border-radius: 26px;
@@ -194,17 +195,25 @@ aside a:last-of-type:hover {
   font-style: normal;
 }
 
-#login-button:hover {
+#auth-button:hover {
   background-color: #e5411d;
   color: #cecece;
   cursor: pointer;
 }
 
-#login-container a {
+#auth-container a {
   text-decoration: none;
   color: #FC471E;
 }
 
-#login-container a:hover {
+#auth-container a:hover {
   text-decoration: underline;
+}
+
+/* Register */
+
+#name-group {
+  display: grid;
+  grid-template-columns: 15rem 15rem;
+  column-gap: 5px;
 }
