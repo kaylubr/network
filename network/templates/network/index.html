@@ -24,7 +24,7 @@
                         </div>
                         <div>
                             <div id="user-edit-head">
-                                <a href="#">u/{{ post.author.username }}</a>
+                                <a href="{% url 'profile' post.author.id %}">u/{{ post.author.username }}</a>
                                 {% if request.user == post.author %}
                                     <button>Edit</button>
                                 {% endif %}

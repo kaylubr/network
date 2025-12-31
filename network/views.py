@@ -22,6 +22,20 @@ def post_content(request):
             new_post.save()
 
         return HttpResponseRedirect(reverse("index"))
+    
+
+def profile_view(request, id):
+    user = User.objects.get(pk=id)
+    posts = Post.objects.filter(author=user)
+
+    print(posts)
+
+    return render(request, "network/profile.html", {
+        "user": user,
+        "posts": posts,
+        "following_count": user.follows.all().count(),
+        "followers_count": user.followers.all().count(),
+    })
 
 
 def login_view(request):

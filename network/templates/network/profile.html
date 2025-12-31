@@ -1,0 +1,50 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+  <div class="profile-container">
+    <div class="profile-header">
+      <div>
+        <img src="{% static 'network/icons/reddit_profile.png' %}" alt="profile picture" id="profile-pic">
+      </div>
+      <div>
+        <p>{{ user.first_name }}</p>
+        <p id="profile-username">u/{{ user.username }}</p>
+      </div>
+    </div>
+    <div class="profile-body">
+      <img src="{% static '/network/icons/calendar.svg' %}" alt="calendar icon" id="calendar-icon">
+      <p>Joined {{ user.date_joined }}</p>
+    </div>
+    <div class="profile-footer">
+      <p><b>{{ following_count }}</b> following</p>
+      <p><b>{{ followers_count }}</b> followers</p>
+    </div>
+  </div>
+
+  <div class="post-container">
+    {% for post in posts %}
+        <div class="post-card">
+            <div class="post-heading">
+                <div>
+                    <img src="{% static 'network/icons/reddit_profile.png' %}" alt="profile picture" id="profile-pic">
+                </div>
+                <div>
+                    <div id="user-edit-head">
+                        <a href="{% url 'profile' post.author.id %}">u/{{ post.author.username }}</a>
+                        {% if request.user == post.author %}
+                            <button>Edit</button>
+                        {% endif %}
+                    </div>
+                    <div id="post-date">Created at {{ post.created_at }}</div>
+                </div>
+            </div>
+            <div class="post-body">{{ post.content }}</div>
+            <div class="post-footer">
+                <img src="{% static 'network/icons/upvote.svg' %}" alt="upvote icon" id="upvote-icon">
+                <p>0</p>
+            </div>
+        </div>
+    {% endfor %}
+  </div>
+{% endblock %}
