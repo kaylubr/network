@@ -16,7 +16,7 @@ def post_content(request):
 
         content = request.POST.get("post_content").strip()
 
-        if content is not None:
+        if content != "":
             new_post = Post(content=content, author=request.user)
             new_post.save()
 
