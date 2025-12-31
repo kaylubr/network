@@ -3,7 +3,6 @@
 
 {% block body %}
     <header>All Posts</header>
-
     {% if user.is_authenticated %}
         <form action="{% url 'post_content' %}" method="post" id="add-post-form">
             {% csrf_token %}

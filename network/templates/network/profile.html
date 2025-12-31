@@ -13,7 +13,8 @@
       </div>
       {% if request.user != user %}
         <div id="profile-header-follow-section">
-          <button>Follow</button>
+          
+          <button id="follow-btn" data-user-id="{{ user.id }}">Follow</button>
         </div>
       {% endif  %}
     </div>

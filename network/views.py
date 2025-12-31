@@ -33,9 +33,24 @@ def profile_view(request, id):
     return render(request, "network/profile.html", {
         "user": user,
         "posts": posts,
-        "following_count": user.follows.all().count(),
+        "following_count": user.followings.all().count(),
         "followers_count": user.followers.all().count(),
     })
+
+
+def following_view(request):
+    posts = Post.objects.filter(author__in=request.user.followings.all()).order_by('-created_at')
+    print(posts)
+    return render(request, "network/index.html", {
+        "posts": posts
+    })
+
+
+def follow_user(request, id):
+    user_to_follow = User.objects.get(pk=id)
+    user_to_follow.followers.add(request.user)
+    return HttpResponseRedirect(reverse("profile", args=[id]))
+
 
 
 def login_view(request):

@@ -3,7 +3,7 @@ from django.db import models
 
 
 class User(AbstractUser):
-    follows = models.ManyToManyField("self", symmetrical=False, related_name="followers")
+    followers = models.ManyToManyField("self", symmetrical=False, related_name="followings")
     pass
 
 

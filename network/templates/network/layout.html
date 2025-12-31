@@ -24,7 +24,7 @@
                     {% if user.is_authenticated %}
                         <li>
                             <img src="{% static 'network/icons/following.svg' %}" alt="following svg" class="nav-icon">
-                            <a href="#">Following</a>
+                            <a href="{% url 'following' %}">Following</a>
                         </li>
                         <li>
                             <img src="{% static 'network/icons/profile.svg' %}" alt="profile icon" class="nav-icon">
@@ -76,5 +76,7 @@
                 </div>
             {% endif %}
         </aside>
+
+        <script src="{% static 'network/script.js' %}"></script>
     </body>
 </html>
