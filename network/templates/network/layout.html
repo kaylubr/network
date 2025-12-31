@@ -18,7 +18,7 @@
                 <ul id="nav-list">
                     <li>
                         <img src="{% static 'network/icons/home.svg' %}" alt="home svg" class="nav-icon">
-                        <a href="#">All Posts</a>
+                        <a href="{% url 'index' %}">All Posts</a>
                     </li>
 
                     {% if user.is_authenticated %}
@@ -28,7 +28,7 @@
                         </li>
                         <li>
                             <img src="{% static 'network/icons/profile.svg' %}" alt="profile icon" class="nav-icon">
-                            <a href="#">Profile</a>
+                            <a href="{% url 'profile' request.user.id %}">Profile</a>
                         </li>
                         <li>
                             <a href="{% url 'logout' %}" id="logout-btn">Log out</a>
