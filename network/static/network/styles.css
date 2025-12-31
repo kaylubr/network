@@ -249,3 +249,61 @@ aside {
   grid-template-columns: 15rem 15rem;
   column-gap: 5px;
 }
+
+/* Index */
+
+header {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #434343;
+  font-size: 20px;
+  background-color: #1C1C1C;
+}
+
+#add-post-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #1C1C1C;
+}
+
+#profile-pic {
+  width: 50px;
+  border-radius: 50%;
+}
+
+#add-post-form > button {
+  align-self: end;
+  color: #fff;
+  border-radius: 28px;
+  background-color: #FC471E;
+  text-align: center;
+  border: 0;
+  width: 4rem;
+  padding: 0.2rem 0;
+  margin-top: 1.5rem;
+  font-family: "Tilt Warp", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#add-post-form textarea {
+  height: 100%;
+  width: calc(100% - 60px - 3rem);
+  outline: 0;
+  background-color: #1C1C1C;
+  color: #fff;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  margin-left: 1rem;
+  resize: none;
+  field-sizing: content;
+}
+
+#add-post-form > button:hover {
+  color: #cecece;
+  cursor: pointer;
+}
