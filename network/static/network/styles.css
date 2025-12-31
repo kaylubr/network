@@ -21,9 +21,13 @@ body {
   flex-grow: 2;
 }
 
+/* Nav */
+
 nav {
   position: sticky;
-  padding: 1rem 2.5rem;
+  padding: 1rem 3rem;
+  background-color: #1C1C1C;
+  width: 322px;
 }
 
 #logo {
@@ -62,7 +66,6 @@ nav > div {
   padding: 1rem 4rem;
   border-radius: 28px;
   background-color: #FC471E;
-  border: 0;
 }
 
 #nav-list > li > button > a{
@@ -85,4 +88,62 @@ nav > div {
 
 .nav-icon {
   width: 30px;
+}
+
+/* Aside */
+
+aside {
+  background-color: #1C1C1C;
+  padding: 2rem 3rem;
+  width: 408px;
+}
+
+aside > div {
+  background-color: #222222;
+  padding: 1.5rem 3rem;
+  border-radius: 12px;
+}
+
+aside h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 19px;
+  margin-bottom: 2rem;
+}
+
+aside > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+aside a {
+  height: 45px;
+}
+
+aside a:first-of-type {
+  color: #fff;
+  text-decoration: none;
+  border-radius: 28px;
+  background-color: #FC471E;
+  text-align: center;
+  padding-top: 11px;
+}
+
+aside a:first-of-type:hover {
+  color: #cecece;
+}
+
+aside a:last-of-type {
+  color: #FC471E;
+  text-decoration: none;
+  border-radius: 28px;
+  border: solid 1px #FC471E;
+  text-align: center;
+  padding-top: 11px;
+}
+
+aside a:last-of-type:hover {
+  text-decoration: underline;
 }

@@ -55,13 +55,13 @@
 
         <aside>
             <div>
-                <h1>Welcome to network!</h1>
-                <button>
-                    <a href="{% url 'register' %}">Register</a>
-                </button>
-                <button>
-                    <a href="{% url 'login' %}">Log in</a>
-                </button>
+                {% if not user.is_authenticated %}
+                    <h1>Welcome to network!</h1>
+                    <div>
+                        <a href="{% url 'register' %}">Register</a>
+                        <a href="{% url 'login' %}">Log in</a>
+                    </div>
+                {% endif %}
             </div>
         </aside>
     </body>
