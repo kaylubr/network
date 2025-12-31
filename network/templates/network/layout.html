@@ -4,46 +4,65 @@
 <html lang="en">
     <head>
         <title>{% block title %}Social Network{% endblock %}</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tilt+Warp&display=swap" rel="stylesheet">
         <link href="{% static 'network/styles.css' %}" rel="stylesheet">
     </head>
     <body>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Network</a>
+        <nav>
+            <img src="{% static 'network/icons/logo.svg' %}" alt="logo" id="logo">
           
             <div>
-              <ul class="navbar-nav mr-auto">
-                {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><strong>{{ user.username }}</strong></a>
+                <ul id="nav-list">
+                    <li>
+                        <img src="{% static 'network/icons/home.svg' %}" alt="home svg" class="nav-icon">
+                        <a href="#">All Posts</a>
                     </li>
-                {% endif %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'index' %}">All Posts</a>
-                </li>
-                {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Following</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
-                    </li>
-                {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Log In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'register' %}">Register</a>
-                    </li>
-                {% endif %}
-              </ul>
+
+                    {% if user.is_authenticated %}
+                        <li>
+                            <img src="{% static 'network/icons/following.svg' %}" alt="following svg" class="nav-icon">
+                            <a href="#">Following</a>
+                        </li>
+                        <li>
+                            <img src="{% static 'network/icons/profile.svg' %}" alt="profile icon" class="nav-icon">
+                            <a href="#">Profile</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'logout' %}" id="logout-btn">Log out</a>
+                        </li>
+
+                        <div>
+                            <p>John Doe</p>
+                            <p>u/doeeyy</p>
+                        </div>
+                    {% else %}
+                        <li>
+                            <img src="{% static 'network/icons/info.svg' %}" alt="home svg" class="nav-icon">
+                            <a href="#">About</a>
+                        </li>
+                    {% endif %}
+                </ul>
             </div>
-          </nav>
+        </nav>
         
         <div class="body">
             {% block body %}
             {% endblock %}
         </div>
+
+        <aside>
+            <div>
+                <h1>Welcome to network!</h1>
+                <button>
+                    <a href="{% url 'register' %}">Register</a>
+                </button>
+                <button>
+                    <a href="{% url 'login' %}">Log in</a>
+                </button>
+            </div>
+        </aside>
     </body>
 </html>
