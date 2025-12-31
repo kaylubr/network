@@ -5,10 +5,11 @@
     <header>All Posts</header>
 
     {% if user.is_authenticated %}
-        <form action="#" id="add-post-form">
+        <form action="{% url 'post_content' %}" method="post" id="add-post-form">
+            {% csrf_token %}
             <div>
                 <img src="{% static 'network/icons/reddit_profile.png' %}" alt="profile picture" id="profile-pic">
-                <textarea name="" id="" placeholder="What's on your mind, {{ user.first_name.capitalize }}?"></textarea>
+                <textarea name="post_content" id="post-content" placeholder="What's on your mind, {{ user.first_name.capitalize }}?"></textarea>
             </div>
             <button type="submit">Post</button>
         </form>
