@@ -8,7 +8,8 @@ from .models import User, Post
 
 
 def index(request):
-    return render(request, "network/index.html")
+    all_posts = Post.objects.order_by("-created_at")
+    return render(request, "network/index.html", { "posts": all_posts })
 
 
 def post_content(request):
@@ -20,7 +21,7 @@ def post_content(request):
             new_post = Post(content=content, author=request.user)
             new_post.save()
 
-        return render(request, "network/index.html")
+        return HttpResponseRedirect(reverse("index"))
 
 
 def login_view(request):

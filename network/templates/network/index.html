@@ -13,6 +13,34 @@
             </div>
             <button type="submit">Post</button>
         </form>
+
+
+        <div class="post-container">
+            {% for post in posts %}
+                <div class="post-card">
+                    <div class="post-heading">
+                        <div>
+                            <img src="{% static 'network/icons/reddit_profile.png' %}" alt="profile picture" id="profile-pic">
+                        </div>
+                        <div>
+                            <div id="user-edit-head">
+                                <a href="#">u/{{ post.author.username }}</a>
+                                {% if request.user == post.author %}
+                                    <button>Edit</button>
+                                {% endif %}
+                            </div>
+                            <div id="post-date">Created at {{ post.created_at }}</div>
+                        </div>
+                    </div>
+                    <div class="post-body">{{ post.content }}</div>
+                    <div class="post-footer">
+                        <img src="{% static 'network/icons/upvote.svg' %}" alt="upvote icon" id="upvote-icon">
+                        <p>0</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        
     {% endif %}
 
 {% endblock %}

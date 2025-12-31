@@ -19,12 +19,13 @@ body {
 
 .body {
   flex-grow: 2;
+  margin-left: 20.125rem;
 }
 
 /* Nav */
 
 nav {
-  position: sticky;
+  position: fixed;
   padding: 1rem 3rem;
   background-color: #1C1C1C;
   width: 20.125rem;
@@ -305,5 +306,79 @@ header {
 
 #add-post-form > button:hover {
   color: #cecece;
+  cursor: pointer;
+}
+
+/* Posts */
+
+.post-container {
+  overflow-y: scroll;
+}
+
+.post-card {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 1.5rem;
+  background-color: #1C1C1C;
+  margin: 2rem;
+}
+
+.post-heading {
+  display: flex;
+  gap: 12px;
+}
+
+.post-heading > div:last-child {
+  flex-grow: 2;
+}
+
+#user-edit-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+#user-edit-head > button {
+  background: none;
+  border: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#user-edit-head > button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.post-heading a {
+  text-decoration: none;
+  color: white;
+}
+
+.post-heading a:hover {
+  text-decoration: underline;
+}
+
+#post-date {
+  font-size: 0.7rem;
+  color: #cecece;
+}
+
+.post-body {
+  font-size: 0.8rem;
+  margin: 1.5rem 0;
+}
+
+.post-footer {
+  display: flex;
+  gap: 5px;
+  border-top: solid 1px #434343;
+  padding-top: 1rem;
+}
+
+#upvote-icon {
+  width: 1.1rem;
   cursor: pointer;
 }
