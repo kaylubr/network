@@ -20,6 +20,8 @@ body {
 .body {
   flex-grow: 2;
   margin-left: 20.125rem;
+  margin-right: 25.5rem;
+  min-width: 26.563rem;
 }
 
 /* Nav */
@@ -96,7 +98,10 @@ nav > div {
 aside {
   background-color: #1C1C1C;
   padding: 2rem 3rem;
-  width: 408px;
+  width: 25.5rem;
+  position: fixed;
+  right: 0;
+  height: 100dvh;
 }
 
 #auth-section {
