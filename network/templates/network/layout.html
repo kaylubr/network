@@ -54,15 +54,27 @@
         </div>
 
         <aside>
-            <div>
-                {% if not user.is_authenticated %}
+            {% if not user.is_authenticated %}
+                <div id="auth-section">
                     <h1>Welcome to network!</h1>
                     <div>
                         <a href="{% url 'register' %}">Register</a>
                         <a href="{% url 'login' %}">Log in</a>
                     </div>
-                {% endif %}
-            </div>
+                </div>
+            {% else %}
+                <div id="interest-section">
+                    <div>
+                        <h1>You may like</h1>
+                    </div>
+                    <ul>
+                        <li><a href="#">CS50 Web Project 0 (Search)</a></li>
+                        <li><a href="#">CS50 Web Project 1 (Wiki)</a></li>
+                        <li><a href="#">CS50 Web Project 2 (Commerce)</a></li>
+                        <li><a href="#">CS50 Web Project 3 (Mail)</a></li>
+                    </ul>
+                </div>
+            {% endif %}
         </aside>
     </body>
 </html>
