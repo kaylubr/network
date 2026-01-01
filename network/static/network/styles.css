@@ -401,6 +401,10 @@ header {
   cursor: pointer;
 }
 
+#upvote-icon + p {
+  margin-bottom: 0;
+}
+
 .page-list {
   display: flex;
   justify-content: center;
