@@ -303,7 +303,6 @@ header {
 }
 
 #add-post-form textarea {
-  height: 100%;
   width: calc(100% - 60px - 3rem);
   outline: 0;
   background-color: #1C1C1C;
@@ -383,6 +382,11 @@ header {
 .post-body {
   font-size: 0.8rem;
   margin: 1.5rem 0;
+  box-sizing: border-box;
+}
+
+.post-body > p {
+  overflow-wrap: break-word;
 }
 
 .post-footer {
