@@ -13,8 +13,11 @@
       </div>
       {% if request.user != user %}
         <div id="profile-header-follow-section">
-          
-          <button id="follow-btn" data-user-id="{{ user.id }}">Follow</button>
+          {% if not is_following %}
+            <button id="follow-btn" data-user-id="{{ user.id }}">Follow</button>
+          {% else %}
+            <button id="follow-btn" data-user-id="{{ user.id }}">Following</button>
+          {% endif  %}
         </div>
       {% endif  %}
     </div>
@@ -23,8 +26,8 @@
       <p>Joined {{ user.date_joined }}</p>
     </div>
     <div class="profile-footer">
-      <p><b>{{ following_count }}</b> following</p>
-      <p><b>{{ followers_count }}</b> followers</p>
+      <p><b id="following-count">{{ following_count }}</b> following</p>
+      <p><b id="followers-count">{{ followers_count }}</b> followers</p>
     </div>
   </div>
 
