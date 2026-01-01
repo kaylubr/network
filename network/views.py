@@ -1,4 +1,5 @@
 from django.contrib.auth import authenticate, login, logout
+from django.core.paginator import Paginator
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
@@ -9,7 +10,15 @@ from .models import User, Post
 
 def index(request):
     all_posts = Post.objects.order_by("-created_at")
-    return render(request, "network/index.html", { "posts": all_posts })
+    page_number = request.GET.get('page', 1)
+    p = Paginator(all_posts, 10)
+    
+    current_page = p.page(page_number)
+
+    return render(request, "network/index.html", { 
+        "current_page": current_page,
+        "page_range": p.page_range,
+    })
 
 
 def post_content(request):
@@ -42,7 +51,7 @@ def profile_view(request, id):
 def following_view(request):
     posts = Post.objects.filter(author__in=request.user.followings.all()).order_by('-created_at')
     return render(request, "network/index.html", {
-        "posts": posts
+        "current_page": posts
     })
 
 
