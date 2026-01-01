@@ -35,8 +35,8 @@
                         </li>
 
                         <div>
-                            <p>John Doe</p>
-                            <p>u/doeeyy</p>
+                            <p>{{ user.first_name.capitalize }} {{ user.last_name.capitalize }}</p>
+                            <p>u/{{ user.username }}</p>
                         </div>
                     {% else %}
                         <li>
