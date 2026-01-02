@@ -389,6 +389,20 @@ header {
   overflow-wrap: break-word;
 }
 
+.edit-textarea {
+  width: 100%;
+  resize: none;
+  min-height: 15vh;
+  padding: 1rem;
+  background-color: #222222;
+  color: #fff;
+  border: solid 1px #434343;
+}
+
+.edit-textarea:focus {
+  outline: 1px solid #FC471E;
+}
+
 .post-footer {
   display: flex;
   gap: 5px;

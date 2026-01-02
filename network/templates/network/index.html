@@ -33,14 +33,14 @@
                             <div id="user-edit-head">
                                 <a href="{% url 'profile' post.author.id %}">u/{{ post.author.username }}</a>
                                 {% if request.user == post.author %}
-                                    <button>Edit</button>
+                                    <button data-post-id="{{ post.id }}" id="edit-btn">Edit</button>
                                 {% endif %}
                             </div>
                             <div id="post-date">Created at {{ post.created_at }}</div>
                         </div>
                     </div>
                     <div class="post-body">
-                        <p>{{ post.content }}</p>
+                        <p id="{{ post.id }}">{{ post.content }}</p>
                     </div>
                     <div class="post-footer">
                         <img src="{% static 'network/icons/upvote.svg' %}" alt="upvote icon" id="upvote-icon">
