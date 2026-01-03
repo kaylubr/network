@@ -33,12 +33,28 @@ editBtn.forEach(btn => {
       textArea.classList.add('edit-textarea');
       textArea.setAttribute('id', id);
 
+      const saveBtn = document.createElement('button');
+      saveBtn.classList.add('save-btn');
+      saveBtn.setAttribute('id', id);
+      saveBtn.textContent = 'Save';
+      saveBtn.addEventListener('click', async (e) => {
+        await fetch(`/edit/${e.target.id}`, {
+          method: 'POST',
+          body: JSON.stringify({
+            content:  document.querySelector('.edit-textarea').value
+          }),
+        })
+      });
+
       postBox.replaceWith(textArea);
+      textArea.after(saveBtn);
       e.target.textContent = 'Cancel';
     } else if (e.target.textContent === 'Cancel') {
       const p = document.createElement('p');
       p.textContent = postBox.getAttribute('data-content-cache');
       p.setAttribute('id', id);
+
+      document.querySelector('.save-btn').remove();
 
       postBox.replaceWith(p);
       e.target.textContent = 'Edit';

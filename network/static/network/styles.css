@@ -380,8 +380,10 @@ header {
 }
 
 .post-body {
+  display: flex;
+  flex-direction: column;
   font-size: 0.8rem;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   box-sizing: border-box;
 }
 
@@ -397,10 +399,30 @@ header {
   background-color: #222222;
   color: #fff;
   border: solid 1px #434343;
+  margin-bottom: 0.5rem;
 }
 
 .edit-textarea:focus {
   outline: 1px solid #FC471E;
+}
+
+.save-btn {
+  margin-left: auto;
+  padding: 0.5rem 1.5rem;
+  color: #fff;
+  border-radius: 28px;
+  background-color: #FC471E;
+  text-align: center;
+  border: 0;
+  font-family: "Tilt Warp", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.save-btn:hover {
+  color: #cecece;
+  background-color: #e5411d;
 }
 
 .post-footer {

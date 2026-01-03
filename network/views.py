@@ -31,6 +31,13 @@ def post_content(request):
             new_post.save()
 
         return HttpResponseRedirect(reverse("index"))
+
+
+def edit_post(request, id):
+    if request.method == "POST":
+        print("LOL")
+        # post = Post.objects.get(pk=id)
+        # post.content 
     
 
 def profile_view(request, id):
